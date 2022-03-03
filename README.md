@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+How to Run:
+	To run the website make sure you have installed:
+		Node JS
+		Python 3.6+
+		PIP
+	Also virtualenv is recomended
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+	Two command consols are needed: 
+		one to run the front end, React
+		one to tun the back end, Flask
+	Starting with the back end it is recomended to create a virtual environment by moving to a 
+	desired directory and running the command:
+		virtaulenv venv
+	This will create a virtual envirnoment in the directory venv
+	To start the virtual directory on linux/mac run the command:
+		/venv/bin/activate
+	To start the virtual directory on windows command propmt runt the command:
+		\venv\Scripts\activate.bat
+	To start the virtual directory on windows powershell run the command:
+		.\venv\Scripts\activate
+	Now use pip to install the required libraries by using the requirements.txt and running the command:
+		pip install -r requirements.txt
+	Now go to the driectory where flask is located in react-flask-app/api by running the command:
+		cd react-flask-app/api
+	Finaly start the backend by executing the command:
+		flask run
+	
+	To start the front end use the other command console
+	For the front end go to the react-flask-app directory by running the command:
+		cd react-flask-app
+	Now to start the front end run the command:
+		npm start
 
-## Available Scripts
+	Simply open a browser to the address: 
+		localhost:3000
 
-In the project directory, you can run:
+Project Description:
+	For this Project I used React for the front end, Flask for the back end, and sqlite3 for the database.
+	The directory react-flask-app contains the .js files needed for the front end and inside the directory
+	api is the .py file that runs the backend, api, and acesses the database students.db
 
-### `npm start`
+	By default any changes to the database will persist, to rebuild the database in the api.py file in the 
+	api directory change the variable recreateDB at line 8 to True, this will delete the previous database
+	and populate it with the default rows on each restart flask.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+	api.py has 4 main functions that are executed when the front end accesses /add, /remove, /update, and /data
+	/add takes the posted json and adds a new row to the database
+	/remove removes the posted id of the row te be removed
+	/update updates the row with the posted id with the posted attributes
+	/data gives a JSON array of all the rows in the database
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+	App.js along with the files in the components directory generates the UI manages backend calls 
+	to do what the UI requests
