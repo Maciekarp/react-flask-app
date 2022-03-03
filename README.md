@@ -1,4 +1,5 @@
 How to Run:
+
 	To run the website make sure you have installed:
 		Node JS
 		Python 3.6+
@@ -35,6 +36,7 @@ How to Run:
 		localhost:3000
 
 Project Description:
+
 	For this Project I used React for the front end, Flask for the back end, and sqlite3 for the database.
 	The directory react-flask-app contains the .js files needed for the front end and inside the directory
 	api is the .py file that runs the backend, api, and acesses the database students.db
